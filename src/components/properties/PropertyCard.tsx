@@ -3,20 +3,10 @@ import { RoundChart } from "../RoundChart";
 import { PropertyInfo } from "./PropertyInfo";
 import { FinancialMetric } from "./FinancialMetric";
 import { PropertyHeader } from "./PropetryHeader";
+import { Property } from "@/lib/property/types";
 
 interface PropertyCardProps {
-  name: string;
-  address: string;
-  image: string;
-  assetValue: string;
-  noi: string;
-  ltv: string;
-  dscr: string;
-  rentPerSqft: string;
-  expenseRatio: string;
-  roe: string;
-  monthlyCashFlow: string;
-  progress: number;
+  property: Property;
 }
 
 export interface PropertyInfoProps {
@@ -27,18 +17,20 @@ export interface PropertyInfoProps {
 }
 
 const PropertyCard: FC<PropertyCardProps> = ({
-  name,
-  address,
-  image,
-  assetValue,
-  noi,
-  ltv,
-  dscr,
-  rentPerSqft,
-  expenseRatio,
-  roe,
-  monthlyCashFlow,
-  progress,
+  property: {
+    name,
+    address,
+    image,
+    assetValue,
+    noi,
+    ltv,
+    dscr,
+    rentPerSqft,
+    expenseRatio,
+    roe,
+    monthlyCashFlow,
+    progress,
+  },
 }) => {
   return (
     <div className="rounded-lg shadow-lg border bg-white">
